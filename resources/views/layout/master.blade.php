@@ -5,12 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="/assets/js/jquery-2.2.4.min.js" defer></script>
+    <script src="/assets/js/bootstrap.min.js" defer></script>
+    
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+
     <title> @yield('title') - My Shop Laravel</title>
 </head>
 
 <body>
     <header>
+        
         <ul class="nav">
+            <li><a href="/">My Shop Laravel</a></li>
           @if(session()->has('user_id'))
             <li><a href="/transaction">交易紀錄</a></li>
             <li><a href="/merchandise/create">商品新增</a></li>
