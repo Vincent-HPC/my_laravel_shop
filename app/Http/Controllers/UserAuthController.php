@@ -4,11 +4,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Shop\Entity\User;  			// User Eloquent ORM Model
+use App\Jobs\SendSignUpMailJob;
 use Mail;
 use Validator; 
 use Hash;
 use DB;
-use App\Shop\Entity\User;  			// User Eloquent ORM Model
 use Exception;
 
 
@@ -72,18 +73,19 @@ class UserAuthController extends Controller {
 		// 寄送註冊通知信
 		$mail_binding = [
 				'nickname' => $input['nickname'],
+				'email' => $input['email'],
 		];
 
-		Mail::send('email.signUpEmailNotification', $mail_binding,
-		function($mail) use ($input){
-			// 寄件人
-			$mail->to($input['email']);
-			// 收件人
-			$mail->from('pchuang92738@gmail.com');
-			// 郵件主旨
-			$mail->subject('恭喜註冊 My Shop Laravel 成功！');
+		// Mail::send('email.signUpEmailNotification',$mail_binding,
+		// 		function($mail) use ($input)
+		// 		{
+		// 				$mail->to($input['email']);
+		// 				$mail->from('pchuang92738@gmail.com');
+		// 				$mail->subject('恭喜註冊 My Shop Laravel 成功');
+		// 		}
+		// );
 
-		});
+		SendSignUpMailJob::dispatch($mail_binding);
 
 		// 重新導向到登入頁
 		return redirect('/user/auth/sign-in');
