@@ -85,7 +85,8 @@ class UserAuthController extends Controller {
 		// 		}
 		// );
 
-		SendSignUpMailJob::dispatch($mail_binding);
+		SendSignUpMailJob::dispatch($mail_binding)
+				->onQueue('high');
 
 		// 重新導向到登入頁
 		return redirect('/user/auth/sign-in');
