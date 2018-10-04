@@ -141,6 +141,19 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes'           => [
+        // 會員
+        'nickname'              => 'nickname',
+        'email'                 => 'email',
+        'password'              => 'password',
+        'password_confirmation' => 'confirm password',
+        // 商品
+        'name'            => 'Item name',
+        'name_en'         => 'Item English name',
+        'introduction'    => 'Item introduction',
+        'introduction_en' => 'Item English introduction',
+        'price'           => 'Item price',
+        'remain_count'    => 'Item remain_count',
+    ],
 
 ];
