@@ -16,11 +16,11 @@
 
 			<table>
 				<tr>
-						<th>名稱</th>
+						<th>{{ trans('shop.merchandise.fields.name') }}</th>
 						<td>{{ $Merchandise->name }}</td>
 				</tr>
 				<tr>
-						<th>照片</th>
+						<th>{{ trans('shop.merchandise.fields.photo') }}</th>
 						<td>
 							@if (!is_null($Merchandise->photo))
 								<img src="{{ $Merchandise->photo }}" />
@@ -30,19 +30,19 @@
 						</td>
 				</tr>
 				<tr>
-						<th>價格</th>
+						<th>{{ trans('shop.merchandise.fields.price') }}</th>
 						<td>
 								{{ $Merchandise->price }}
 						</td>
 				</tr>
 				<tr>
-						<th>剩餘數量</th>
+						<th>{{ trans('shop.merchandise.fields.remain-count') }}</th>
 						<td>
 								{{ $Merchandise->remain_count }}
 						</td>
 				</tr>
 				<tr>
-						<th>介紹</th>
+						<th>{{ trans('shop.merchandise.fields.introduction') }}</th>
 						<td>
 								{{ $Merchandise->introduction }}
 						</td>
@@ -52,14 +52,14 @@
 								<form action="/merchandise/{{ $Merchandise->id }}/buy"
 											method="post"
 								>
-										購買數量
+										{{ trans('shop.transaction.fields.buy-count') }}
 										<select name="buy_count">
 												@for($count = 0; $count <= $Merchandise->remain_count; $count++)
 														<option value="{{ $count }}">{{ $count }}</option>
 												@endfor
 										</select>
 										<button type="submit" >
-												購買
+												{{ trans('shop.transaction.buy') }}
 										</button>
 										{{ csrf_field() }}
 								</form>

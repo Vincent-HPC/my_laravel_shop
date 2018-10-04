@@ -24,14 +24,14 @@
       {{ method_field('PUT') }}
 
 			<label >
-				商品狀態：
+				{{ trans('shop.merchandise.fields.status-name') }}：
 				<select name="status">
 					<option value="C"
 						@if(old('status', $Merchandise->status)=='C') 
 							selected 
 						@endif					
 					>
-					建立中
+					{{ trans('shop.merchandise.fields.status.create') }}
 					</option>
 				
 					<option value="S"
@@ -39,42 +39,42 @@
 							selected 
 						@endif					
 					>
-					可販售
+					{{ trans('shop.merchandise.fields.status.sell') }}
 					</option>
 				</select>		
 			</label>
 		
 			<label >
-				商品名稱：
-				<input type="text" name="name" placeholder="商品名稱" 
+				{{ trans('shop.merchandise.fields.name') }}：
+				<input type="text" name="name" placeholder="{{ trans('shop.merchandise.fields.name') }}" 
 				value="{{ old('name', $Merchandise->name) }}"
 				>
 			</label>
 
 			<label >
-				商品英文名稱：
-				<input type="text" name="name_en" placeholder="商品英文名稱" 
+				{{ trans('shop.merchandise.fields.name-en') }}：
+				<input type="text" name="name_en" placeholder="{{ trans('shop.merchandise.fields.name-en') }}" 
 				value="{{ old('name_en', $Merchandise->name_en) }}"
 				>
 			</label>
 
 			<label >
-				商品介紹：
-				<input type="text" name="introduction" placeholder="商品介紹" 
+				{{ trans('shop.merchandise.fields.introduction') }}：
+				<input type="text" name="introduction" placeholder="{{ trans('shop.merchandise.fields.introduction') }}" 
 				value="{{ old('introduction', $Merchandise->introduction) }}"
 				>
 			</label>
 
 			<label >
-				商品英文介紹：
-				<input type="text" name="introduction_en" placeholder="商品英文介紹" 
+				{{ trans('shop.merchandise.fields.introduction-en') }}：
+				<input type="text" name="introduction_en" placeholder="{{ trans('shop.merchandise.fields.introduction-en') }}" 
 				value="{{ old('introduction_en', $Merchandise->introduction_en) }}"
 				>
 			</label>
 
 			<label >
-				商品照片：
-				<input type="file" name="photo" placeholder="商品照片" 
+				{{ trans('shop.merchandise.fields.photo') }}：
+				<input type="file" name="photo" placeholder="{{ trans('shop.merchandise.fields.photo') }}" 
 				>
 				@if (!is_null($Merchandise->photo))
 					<img src="{{ $Merchandise->photo }}" />
@@ -86,20 +86,20 @@
 			</label>
 
 			<label >
-				商品價格：
-				<input type="text" name="price"" placeholder="商品價格" 
+				{{ trans('shop.merchandise.fields.price') }}：
+				<input type="text" name="price"" placeholder="{{ trans('shop.merchandise.fields.price') }}" 
 				value="{{ old('price', $Merchandise->price) }}"
 				>
 			</label>
 
 			<label >
-				商品剩餘數量：
-				<input type="text" name="remain_count" placeholder="商品剩餘數量" 
+				{{ trans('shop.merchandise.fields.remain-count') }}：
+				<input type="text" name="remain_count" placeholder="{{ trans('shop.merchandise.fields.remain-count') }}" 
 				value="{{ old('remain_count', $Merchandise->remain_count) }}"
 				>
 			</label>
 
-			<button type="submit" class="btn btn-default">更新商品資訊</button>
+			<button type="submit" class="btn btn-default">{{ trans('shop.merchandise.update') }}</button>
 
 			{{ csrf_field() }}
 		</form>

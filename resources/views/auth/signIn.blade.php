@@ -14,18 +14,18 @@
 
     <form action="/user/auth/sign-in" method="post">
         <label>
-            Email:
-            <input type="text" name="email" placeholder="Email" value="{{ old('email') }}">
+            {{ trans('shop.user.fields.email') }}:
+            <input type="text" name="email" placeholder="{{ trans('shop.user.fields.email') }}" value="{{ old('email') }}">
 
         </label>
 
         <label>
-            密碼:
-            <input type="password" name="password" placeholder="密碼" value="{{ old('password') }}">
+            {{ trans('shop.user.fields.password') }}:
+            <input type="password" name="password" placeholder="{{ trans('shop.user.fields.password') }}" value="{{ old('password') }}">
 
         </label>
 
-        <button type="submit">登入</button>
+        <button type="submit">{{ trans('shop.auth.sign-in') }}</button>
 
         <!-- For CSRF 欄位 -->
         {!! csrf_field() !!}

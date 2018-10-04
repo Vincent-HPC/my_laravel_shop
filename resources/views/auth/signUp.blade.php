@@ -19,42 +19,50 @@
 	<form action="/user/auth/sign-up" method="post">
 
     <label>
-      暱稱：
-      <input type="text" name="nickname" placeholder="暱稱" 
+      {{ trans('shop.user.fields.nickname') }}：
+      <input type="text" name="nickname" placeholder="{{ trans('shop.user.fields.nickname') }}" 
       value="{{ old('nickname') }}"
       >
     
     </label>
 
     <label >
-        Email:
-        <input type="text" name="email" placeholder="Email"
+        {{ trans('shop.user.fields.email') }}：
+        <input type="text" name="email" placeholder="{{ trans('shop.user.fields.email') }}"
         value="{{ old('email') }}"
         >
 
     </label>
 
     <label >
-        密碼:
-        <input type="password" name="password" placeholder="密碼">
+        {{ trans('shop.user.fields.password') }}:
+        <input type="password" name="password" placeholder="{{ trans('shop.user.fields.password') }}">
 
     </label>  
 
     <label >
-        確認密碼:
-        <input type="password" name="password_confirmation" placeholder="確認密碼">
+        {{ trans('shop.user.fields.confirm-password') }}:
+        <input type="password" name="password_confirmation" placeholder="{{ trans('shop.user.fields.confirm-password') }}">
         
     </label>
 
     <label>
-        帳號類型：
+        {{ trans('shop.user.fields.type-name') }}
         <select name="type" >
-            <option value="G">一般會員</option>
-            <option value="A">管理者</option>
+            <option value="G"
+                    @if(old('type')=='G') selected @endif
+            >
+                {{ trans('shop.user.fields.type.general') }}
+            </option>
+            <option value="A"
+                    @if(old('type')=='A') selected @endif
+            >
+                {{ trans('shop.user.fields.type.admin') }}
+            </option>
         </select>
     </label>      
 
-    <button type="submit">註冊</button>
+    <button type="submit">{{ trans('shop.auth.sign-up') }}</button>
 
     <!-- For CSRF 欄位 -->
     {!! csrf_field() !!}

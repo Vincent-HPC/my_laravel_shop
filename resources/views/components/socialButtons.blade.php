@@ -2,6 +2,7 @@
 
 
 <div class="social">
-		<a href="#">分享到 Facebook</a>
-		<a href="#">分享到 Twitter</a>
+		<a href="#"> {{ trans('shop.social.share2facebook') }} </a>
+		<br>
+		<a href="#"> {{ trans('shop.social.share2twitter') }} </a>
 	</div>

@@ -19,7 +19,7 @@ class UserAuthController extends Controller {
 	//register Page
 	public function signUpPage(){
 		$binding = [
-			'title' => '註冊',
+			'title' => trans('shop.auth.sign-up'),
 		];
 		return view('auth.signUp',$binding);
 	}
@@ -95,7 +95,7 @@ class UserAuthController extends Controller {
 
 	public function signInPage(){
 		$binding = [
-			'title' => '登入',
+			'title' => trans('shop.auth.sign-in'),
 		];
 		return view('auth.signIn', $binding);
 	}

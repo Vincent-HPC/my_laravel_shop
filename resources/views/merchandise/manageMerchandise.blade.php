@@ -17,13 +17,13 @@
 
 			<table class="table">
 				<tr>
-					<th>編號</th>
-					<th>名稱</th>
-					<th>圖片</th>
-					<th>狀態</th>
-					<th>價格</th>
-					<th>剩餘數量</th>
-					<th>編輯</th>			
+					<th>{{ trans('shop.merchandise.fields.id') }}</th>
+					<th>{{ trans('shop.merchandise.fields.name') }}</th>
+					<th>{{ trans('shop.merchandise.fields.photo') }}</th>
+					<th>{{ trans('shop.merchandise.fields.status-name') }}</th>
+					<th>{{ trans('shop.merchandise.fields.price') }}</th>
+					<th>{{ trans('shop.merchandise.fields.remain-count') }}</th>
+					<th>{{ trans('shop.merchandise.edit') }}</th>			
 				</tr>
 				@foreach($MerchandisePaginate as $Merchandise)
 					<tr>
@@ -38,16 +38,16 @@
 						</td>
 						<td>
 							@if($Merchandise->status == 'C')
-								建立中
+								{{ trans('shop.merchandise.fields.status.create') }}
 							@else
-								可販售
+								{{ trans('shop.merchandise.fields.status.sell') }}
 							@endif
 						</td>
 						<td> {{ $Merchandise->price }}</td>
 						<td> {{ $Merchandise->remain_count }}</td>
 						<td>
 							<a href="/merchandise/{{ $Merchandise->id }}/edit">
-								編輯
+								{{ trans('shop.merchandise.edit') }}
 							</a>
 						</td>
 					

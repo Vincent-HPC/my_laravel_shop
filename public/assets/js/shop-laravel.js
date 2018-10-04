@@ -1,8 +1,8 @@
 $document = $(document);
 
-$document.ready(function(){
+$document.ready(function () {
     // 文件載入完成
-    $document.on("click", '.set_language', function(event){
+    $document.on("click", '.set_language', function (event) {
         // 點選 .set_language HTML tag
         event.stopPropagation();
         event.preventDefault();

@@ -16,12 +16,12 @@
 
 		<table class="table">
 				<tr>
-					<th>商品名稱</th>
-					<th>圖片</th>
-					<th>單價</th>
-					<th>數量</th>
-					<th>總金額</th>
-					<th>購買時間</th>
+					<th>{{ trans('shop.transaction.fields.name') }}</th>
+					<th>{{ trans('shop.transaction.fields.photo') }}</th>
+					<th>{{ trans('shop.transaction.fields.price') }}</th>
+					<th>{{ trans('shop.transaction.fields.count') }}</th>
+					<th>{{ trans('shop.transaction.fields.total-count') }}</th>
+					<th>{{ trans('shop.transaction.fields.buy-time') }}</th>
 				</tr>
 				@foreach($TransactionPaginate as $Transaction)
 					<tr>
